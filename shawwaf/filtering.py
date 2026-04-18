@@ -1,5 +1,5 @@
 """
-Convolution and spatial filters for the MiniCV library.
+Convolution and spatial filters for the shawwaf library.
 
 Provides 2D convolution, a spatial filter dispatcher for RGB images,
 and built-in mean, Gaussian, and median filters. All linear filters
@@ -8,7 +8,7 @@ use the convolution pipeline defined here.
 
 import numpy as np
 
-from minicv.utils import validate_image, validate_grayscale, validate_kernel, pad
+from shawwaf.utils import validate_image, validate_grayscale, validate_kernel, pad
 
 
 # ---------------------------------------------------------------------------
@@ -20,7 +20,7 @@ def convolve2d(image, kernel, pad_mode="zero"):
 
     The kernel is flipped (180° rotation) before sliding, following
     the mathematical definition of convolution. Boundary handling is
-    delegated to :func:`minicv.utils.pad`.
+    delegated to :func:`shawwaf.utils.pad`.
 
     Parameters
     ----------
@@ -29,7 +29,7 @@ def convolve2d(image, kernel, pad_mode="zero"):
     kernel : numpy.ndarray
         2D convolution kernel with odd dimensions.
     pad_mode : str, optional
-        Padding mode passed to :func:`minicv.utils.pad`.
+        Padding mode passed to :func:`shawwaf.utils.pad`.
         One of ``'zero'``, ``'reflect'``, ``'replicate'``.
 
     Returns

@@ -1,9 +1,9 @@
-"""Unit tests for minicv.filtering — Convolution and spatial filters."""
+"""Unit tests for shawwaf.filtering — Convolution and spatial filters."""
 
 import numpy as np
 import pytest
 
-from minicv.filtering import (
+from shawwaf.filtering import (
     convolve2d,
     spatial_filter,
     mean_filter,

@@ -1,9 +1,9 @@
-"""Unit tests for minicv.processing — Thresholding, Sobel, histogram, etc."""
+"""Unit tests for shawwaf.processing — Thresholding, Sobel, histogram, etc."""
 
 import numpy as np
 import pytest
 
-from minicv.processing import (
+from shawwaf.processing import (
     threshold,
     sobel,
     bit_plane_slice,

@@ -1,9 +1,9 @@
-"""Setup configuration for the MiniCV package."""
+"""Setup configuration for the Shawwaf package."""
 
 from setuptools import setup, find_packages
 
 setup(
-    name="minicv",
+    name="shawwaf",
     version="0.1.0",
     description="A from-scratch Python image-processing library emulating a subset of OpenCV.",
     author="CSE480 Student",

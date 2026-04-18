@@ -1,5 +1,5 @@
 """
-Geometric transformations for the MiniCV library.
+Geometric transformations for the shawwaf library.
 
 Provides resize, rotate, and translate operations with configurable
 interpolation methods. All transforms use vectorized NumPy coordinate
@@ -8,7 +8,7 @@ mapping — no per-pixel Python loops.
 
 import numpy as np
 
-from minicv.utils import validate_image
+from shawwaf.utils import validate_image
 
 
 # ---------------------------------------------------------------------------

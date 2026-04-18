@@ -1,10 +1,10 @@
-# MiniCV API Reference
+# shawwaf API Reference
 
-Complete API reference for the `minicv` package, organized by module.
+Complete API reference for the `shawwaf` package, organized by module.
 
 ---
 
-## `minicv.io` — Image I/O & Color Conversion
+## `shawwaf.io` — Image I/O & Color Conversion
 
 ### `read_image(path) → ndarray`
 
@@ -57,7 +57,7 @@ Convert grayscale to RGB by stacking the channel 3×.
 
 ---
 
-## `minicv.utils` — Core Utilities
+## `shawwaf.utils` — Core Utilities
 
 ### `normalize(image, mode='minmax') → ndarray`
 
@@ -90,7 +90,7 @@ Pad a grayscale image. Modes: `'zero'`, `'reflect'`, `'replicate'`.
 
 ---
 
-## `minicv.filtering` — Convolution & Spatial Filters
+## `shawwaf.filtering` — Convolution & Spatial Filters
 
 ### `convolve2d(image, kernel, pad_mode='zero') → ndarray`
 
@@ -136,7 +136,7 @@ Non-linear median filter for salt-and-pepper noise removal. Works on grayscale a
 
 ---
 
-## `minicv.processing` — Image Processing
+## `shawwaf.processing` — Image Processing
 
 ### `threshold(image, method='global', **kwargs) → ndarray`
 
@@ -186,7 +186,7 @@ Power-law transform: `output = 255 × (input / 255) ^ gamma`. `gamma < 1` bright
 
 ---
 
-## `minicv.transforms` — Geometric Transformations
+## `shawwaf.transforms` — Geometric Transformations
 
 ### `resize(image, target_size, method='bilinear') → ndarray`
 
@@ -206,7 +206,7 @@ Shift image by `(tx, ty)` pixels. Vacated regions filled with 0.
 
 ---
 
-## `minicv.features` — Feature Extractors
+## `shawwaf.features` — Feature Extractors
 
 ### `color_histogram_descriptor(image, bins=32) → ndarray`
 
@@ -232,7 +232,7 @@ Magnitude-weighted edge orientation histogram over [0°, 360°). L1-normalized.
 
 ---
 
-## `minicv.drawing` — Drawing Primitives & Text
+## `shawwaf.drawing` — Drawing Primitives & Text
 
 ### `draw_point(image, x, y, color=255, thickness=1) → ndarray`
 

@@ -1,9 +1,9 @@
-"""Unit tests for minicv.drawing — Drawing primitives and text."""
+"""Unit tests for shawwaf.drawing — Drawing primitives and text."""
 
 import numpy as np
 import pytest
 
-from minicv.drawing import (
+from shawwaf.drawing import (
     draw_point,
     draw_line,
     draw_rectangle,

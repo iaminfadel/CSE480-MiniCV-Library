@@ -1,5 +1,5 @@
 """
-Drawing primitives and text placement for the MiniCV library.
+Drawing primitives and text placement for the shawwaf library.
 
 Provides functions to draw points, lines, rectangles, polygons,
 and text onto images. Uses Bresenham's line algorithm for rasterization
@@ -8,7 +8,7 @@ and Matplotlib font rendering for text.
 
 import numpy as np
 
-from minicv.utils import validate_image
+from shawwaf.utils import validate_image
 
 
 # ---------------------------------------------------------------------------

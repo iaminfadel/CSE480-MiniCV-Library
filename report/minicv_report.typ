@@ -8,7 +8,7 @@
   #v(2cm)
 
   #text(size: 20pt, weight: "bold")[
-    AMiniCV: Image Processing Library from Scratch
+    Shawwaf: Image Processing Library from Scratch
   ]
 
   #text(size: 18pt, weight: "bold")[
@@ -31,42 +31,23 @@
     Submitted By:
   ]
 
-  #text(size: 14pt)[
-    Amin Moustafa Fadel
-  ]
+  #v(0.5cm)
 
-  #text(size: 14pt)[
-    Student ID: 2100483
-  ]
+  #table(
+    columns: (2fr, 1fr),
+    align: (left, center),
+    stroke: 0.5pt,
+    fill: (_, row) => if calc.odd(row) { rgb("#f5f5f5") } else { white },
+    inset: 8pt,
+    table.header(
+      [*Name*], [*Student ID*],
+    ),
+    [Amin Moustafa Fadel],          [2100483],
+    [Ahmed Osama Ahmed Nasr],       [2101119],
+    [Mohammed Tarek Abdelwahab],    [2100287],
+  )
 
-  #v(4cm)
-]
-
-#pagebreak()
-
-// Abstract Page
-#set page(
-  margin: (left: 2.5cm, right: 2.5cm, top: 3cm, bottom: 3cm),
-  numbering: "i",
-  number-align: center,
-)
-
-#align(center)[
-  #text(size: 16pt, weight: "bold")[Abstract]
-]
-
-#v(1em)
-
-This report presents the design, implementation, and evaluation of **AMiniCV**, an image-processing library built entirely from scratch in Python. Following the specifications of Milestone 1 for the Machine Vision course (CSE480), the library emulates a carefully defined subset of OpenCV functionalities using only standard Python libraries and NumPy. By enforcing constraints against leveraging dedicated vision frameworks such as OpenCV, scikit-image, or Pillow, this project provides a rigorous educational foundation in low-level image processing.
-
-The AMiniCV package is symmetrically structured into core modules encompassing image input/output (`io`), shared utilities (`utils`), spatial filtering (`filtering`), advanced thresholding and pixel operations (`processing`), geometric augmentations (`transforms`), global and gradient feature extraction (`features`), and geometric drawing primitives (`drawing`). The implemented operations are heavily vectorized to maximize computational efficiency, substituting native Python iteration with NumPy broadcasting methodologies wherever mathematically permissible.
-
-The report details the mathematical derivations and algorithmic strategies employed across 36 distinct user stories, validating the mathematical fidelity, robustness, and visual fidelity of the implemented functions. The results establish AMiniCV as an extensible drop-in vision processing backend demonstrating production-level code quality, complete documentation, and 100% test validation.
-
-#v(1em)
-
-#align(center)[
-  #text(weight: "bold")[Keywords:] Image Processing, Computer Vision, Edge Detection, Vectorization, NumPy, Feature Extraction, Spatial Filtering
+  #v(3cm)
 ]
 
 #pagebreak()
@@ -95,7 +76,7 @@ The report details the mathematical derivations and algorithmic strategies emplo
   header: context {
     if counter(page).get().first() > 1 [
       #set text(8pt)
-      #smallcaps[AMiniCV Image Processing Library]
+      #smallcaps[Shawwaf Image Processing Library]
       #h(1fr)
       #counter(page).display("1")
       #line(length: 100%, stroke: 0.5pt)
@@ -187,11 +168,11 @@ The report details the mathematical derivations and algorithmic strategies emplo
 
 Image processing techniques constitute the initial phase of any computer vision pipeline. The dependency on highly optimized, monolithic libraries such as OpenCV abstracts the mathematical intricacies of the domain, distancing practitioners from fundamental algorithmic constraints.
 
-AMiniCV bridges this educational gap by re-engineering these capabilities using an arbitrary baseline of Python constraints. The library achieves parity with low-level OpenCV abstractions while operating entirely atop NumPy multidimensional arrays.
+Shawwaf bridges this educational gap by re-engineering these capabilities using an arbitrary baseline of Python constraints. The library achieves parity with low-level OpenCV abstractions while operating entirely atop NumPy multidimensional arrays.
 
 == Objectives
 
-The design and development of AMiniCV were grounded in the following core objectives:
+The design and development of Shawwaf were grounded in the following core objectives:
 
 1. *Algorithm Mathematical Fidelity*: Demonstrating exact transformations without reliance on black-box wrappers.
 2. *Architectural Modularity*: Establishing a package structure suitable for independent domain modules (I/O, Filtering, Transforms).
@@ -202,10 +183,10 @@ The design and development of AMiniCV were grounded in the following core object
 
 == Package Structure
 
-AMiniCV adopts a traditional flat-package architecture conducive to straightforward imports:
+Shawwaf adopts a traditional flat-package architecture conducive to straightforward imports:
 
 ```text
-AMiniCV/
+Shawwaf/
 ├── __init__.py
 ├── io.py             (Image read/write, formats)
 ├── utils.py          (Shared validation, padding)
@@ -218,13 +199,13 @@ AMiniCV/
 
 == Core Abstraction: Vectorized Cross-Correlation
 
-At the heart of any image processing library lies spatial filtering. AMiniCV implements its core kernel convolution mathematically analogous to OpenCV's `filter2D`.
+At the heart of any image processing library lies spatial filtering. Shawwaf implements its core kernel convolution mathematically analogous to OpenCV's `filter2D`.
 
 For an input image $I$ and kernel $K$ of dimensions $(2k+1) times (2k+1)$, the linear convolution is bounded as:
 
 $ S(x,y) = sum_(i=-k)^k sum_(j=-k)^k I(x-i, y-j) K(i, j) $
 
-Unlike naive element-wise iteration mapping, AMiniCV enforces this mathematically through highly optimized view-based strides using NumPy array mechanics. Memory boundaries are secured via configurable padding mechanisms (Zero, Reflect, Edge Replicate).
+Unlike naive element-wise iteration mapping, Shawwaf enforces this mathematically through highly optimized view-based strides using NumPy array mechanics. Memory boundaries are secured via configurable padding mechanisms (Zero, Reflect, Edge Replicate).
 
 #figure(
   image("assets/padding_demo.png", width: 100%),
@@ -235,7 +216,7 @@ Unlike naive element-wise iteration mapping, AMiniCV enforces this mathematicall
 
 == Mean, Gaussian, and Median
 
-The `AMiniCV.filtering` module exposes fundamental discrete convolutions essential to noise reduction.
+The `Shawwaf.filtering` module exposes fundamental discrete convolutions essential to noise reduction.
 
 - *Gaussian Filtering*: Generated via numerical sampling of the 2D Gaussian distribution, preserving image energy.
 $ G(x,y) = frac(1, 2 pi sigma^2) e^(-frac(x^2 + y^2, 2 sigma^2)) $
@@ -263,7 +244,7 @@ $ |G| = sqrt(G_x^2 + G_y^2) $
 
 == Adaptive and Global Thresholding
 
-AMiniCV segregates pixels by generating binary masks via various evaluation constraints:
+Shawwaf segregates pixels by generating binary masks via various evaluation constraints:
 
 - *Global Formulation*: Defined against hard-coded luminance bounds.
 - *Otsu's Method*: Procedurally evaluates discrete histogram variance to maximize inter-class separation.
@@ -291,7 +272,7 @@ Furthermore, the integration of bit plane slicing isolates discrete intensity ve
 
 == Additional Rendering Techniques
 
-To extend the baseline curriculum constraints, AMiniCV employs optional filtering pipelines including Laplacian sharpening to emphasize high-frequency edges, alongside parameterized Gamma correction for non-linear luminance mapping.
+To extend the baseline curriculum constraints, Shawwaf employs optional filtering pipelines including Laplacian sharpening to emphasize high-frequency edges, alongside parameterized Gamma correction for non-linear luminance mapping.
 
 #figure(
   image("assets/extras_demo.png", width: 100%),
@@ -300,7 +281,7 @@ To extend the baseline curriculum constraints, AMiniCV employs optional filterin
 
 = Feature Extraction Modules
 
-Vector descriptors collapse arbitrary pixel spaces into statistically significant, low-dimensionality arrays for downstream classification algorithms. AMiniCV implements both Global and Gradient-based local feature extraction.
+Vector descriptors collapse arbitrary pixel spaces into statistically significant, low-dimensionality arrays for downstream classification algorithms. Shawwaf implements both Global and Gradient-based local feature extraction.
 
 - *Global Extraction*: Captures macroscopic tone properties via normalized color histograms and central pixel statistics (Mean, Variance).
 - *Gradient Extraction*: Evaluates regional complexity scaling via structural Histogram of Oriented Gradients (HOG) and Edge Orientation analysis.
@@ -315,7 +296,7 @@ Vector descriptors collapse arbitrary pixel spaces into statistically significan
 Image alignment, resizing, and warping are handled via the `transforms.py` module, utilizing configurable coordinate interpolations (Nearest-Neighbor, Bilinear).
 
 #insight[
-  Image rotation fundamentally breaks grid alignments. Instead of projecting input pixels to irrational output float topologies, AMiniCV projects an inverse coordinate map utilizing homographic rotation matrices centered on the origin.
+  Image rotation fundamentally breaks grid alignments. Instead of projecting input pixels to irrational output float topologies, Shawwaf projects an inverse coordinate map utilizing homographic rotation matrices centered on the origin.
 ]
 
 #figure(
@@ -334,7 +315,7 @@ The library features from-scratch geometry rasterization manipulating pixel regi
 
 = Conclusion
 
-The AMiniCV project achieves robust equivalency with essential elements of traditional machine vision constraints. The constraints on utilizing Python loop structures fundamentally compelled the application of high-precision numerical techniques across the NumPy API.
+The Shawwaf project achieves robust equivalency with essential elements of traditional machine vision constraints. The constraints on utilizing Python loop structures fundamentally compelled the application of high-precision numerical techniques across the NumPy API.
 
 The resulting framework operates as an educational testament to underlying CV engineering, fully documented and validated against extensive edge case validation pipelines. Future expansion avenues include morphological erosion algorithms, integral image optimization maps, and Hough space detection transforms.
 
@@ -342,6 +323,6 @@ The resulting framework operates as an educational testament to underlying CV en
 
 The repository encapsulating all functional domains, continuous testing, testing scripts, and visualization notebooks is located at:
 
-#link("https://github.com/iaminfadel/AMiniCV")
+#link("https://github.com/iaminfadel/Shawwaf")
 
 102 unit tests validate matrix boundary behaviors, dimension mismatch handling, and dtype assertion.

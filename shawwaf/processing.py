@@ -1,5 +1,5 @@
 """
-Image processing techniques for the MiniCV library.
+Image processing techniques for the shawwaf library.
 
 Provides thresholding (global, Otsu, adaptive), Sobel edge detection,
 bit-plane slicing, histogram operations, Laplacian sharpening, and
@@ -8,8 +8,8 @@ gamma correction.
 
 import numpy as np
 
-from minicv.utils import validate_image, validate_grayscale
-from minicv.filtering import convolve2d, spatial_filter
+from shawwaf.utils import validate_image, validate_grayscale
+from shawwaf.filtering import convolve2d, spatial_filter
 
 
 # ---------------------------------------------------------------------------
@@ -121,7 +121,7 @@ def _adaptive_threshold(image, block_size, adaptive_method, c):
     if adaptive_method == "mean":
         kernel = np.ones((block_size, block_size), dtype=np.float64) / (block_size ** 2)
     elif adaptive_method == "gaussian":
-        from minicv.filtering import gaussian_kernel
+        from shawwaf.filtering import gaussian_kernel
         kernel = gaussian_kernel(block_size, block_size / 6.0)
     else:
         raise ValueError(
@@ -167,7 +167,7 @@ def sobel(image):
     validate_image(image)
     if image.ndim == 3:
         import warnings
-        from minicv.io import to_grayscale
+        from shawwaf.io import to_grayscale
         warnings.warn("RGB image auto-converted to grayscale for Sobel.")
         image = to_grayscale(image)
 

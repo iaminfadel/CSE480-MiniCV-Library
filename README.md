@@ -1,4 +1,4 @@
-# MiniCV — Python Image Processing Library
+# Shawwaf — Python Image Processing Library
 
 **CSE480: Machine Vision | Milestone 1 | Spring 2026**
 
@@ -11,7 +11,7 @@ A from-scratch Python image-processing library that emulates a subset of OpenCV 
 ```bash
 # Clone the repository
 git clone <repo-url>
-cd miniCV
+cd shawwaf
 
 # Install dependencies
 pip install -r requirements.txt
@@ -23,35 +23,35 @@ pip install -e .
 ## Quickstart
 
 ```python
-import minicv
+import shawwaf
 
 # Read an image
-img = minicv.io.read_image("photo.png")
+img = shawwaf.io.read_image("photo.png")
 
 # Convert to grayscale
-gray = minicv.io.to_grayscale(img)
+gray = shawwaf.io.to_grayscale(img)
 
 # Apply Gaussian blur
-blurred = minicv.filtering.gaussian_filter(gray, size=5, sigma=1.5)
+blurred = shawwaf.filtering.gaussian_filter(gray, size=5, sigma=1.5)
 
 # Detect edges with Sobel
-gx, gy, magnitude, direction = minicv.processing.sobel(gray)
+gx, gy, magnitude, direction = shawwaf.processing.sobel(gray)
 
 # Threshold using Otsu's method
-binary = minicv.processing.threshold(gray, method="otsu")
+binary = shawwaf.processing.threshold(gray, method="otsu")
 
 # Draw a rectangle
-minicv.drawing.draw_rectangle(img, 10, 20, 100, 50, color=(255, 0, 0), thickness=2)
+shawwaf.drawing.draw_rectangle(img, 10, 20, 100, 50, color=(255, 0, 0), thickness=2)
 
 # Save result
-minicv.io.save_image(img, "output.png")
+shawwaf.io.save_image(img, "output.png")
 ```
 
 ## Package Structure
 
 ```
-miniCV/
-├── minicv/                  # Importable package
+shawwaf/
+├── shawwaf/                 # Importable package
 │   ├── __init__.py
 │   ├── io.py                # Image I/O & color conversion
 │   ├── utils.py             # Normalization, clipping, padding, validation

@@ -1,4 +1,4 @@
-"""Unit tests for minicv.io — Image I/O and color conversion."""
+"""Unit tests for shawwaf.io — Image I/O and color conversion."""
 
 import os
 import tempfile
@@ -6,7 +6,7 @@ import tempfile
 import numpy as np
 import pytest
 
-from minicv.io import read_image, save_image, to_grayscale, to_rgb
+from shawwaf.io import read_image, save_image, to_grayscale, to_rgb
 
 
 # ---------------------------------------------------------------------------

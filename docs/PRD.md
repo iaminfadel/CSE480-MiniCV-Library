@@ -1,12 +1,12 @@
 # Product Requirements Document
-## MiniCV — Python Image Processing Library
+## shawwaf — Python Image Processing Library
 ### CSE480: Machine Vision | Milestone 1 | Spring 2026
 
 ---
 
 ## Overview
 
-MiniCV is a reusable, from-scratch Python image-processing library that emulates a well-defined subset of OpenCV. It is implemented using only NumPy, Pandas, Matplotlib, and the Python standard library. The library must be structured as a proper, importable Python package with clean module separation, comprehensive docstrings, and rigorous input validation.
+shawwaf is a reusable, from-scratch Python image-processing library that emulates a well-defined subset of OpenCV. It is implemented using only NumPy, Pandas, Matplotlib, and the Python standard library. The library must be structured as a proper, importable Python package with clean module separation, comprehensive docstrings, and rigorous input validation.
 
 ---
 
@@ -31,8 +31,8 @@ MiniCV is a reusable, from-scratch Python image-processing library that emulates
 The repository must be laid out as a proper Python project, not a single script. The package source, tests, documentation, and notebooks each live in their own top-level folder.
 
 ```
-minicv-repo/
-├── minicv/                  # Installable package source
+shawwaf-repo/
+├── shawwaf/                  # Installable package source
 │   ├── __init__.py
 │   ├── io.py                # Image I/O & color conversion
 │   ├── utils.py             # Shared utilities (normalization, clipping, padding, dtype helpers)
@@ -75,11 +75,11 @@ minicv-repo/
 ### Epic 1 — Packaging & Project Structure
 
 **US-1.1 — Importable Package**
-> As a developer, I want to import `minicv` and its submodules cleanly, so that I can use the library in any Python project without path hacks.
+> As a developer, I want to import `shawwaf` and its submodules cleanly, so that I can use the library in any Python project without path hacks.
 
 **Acceptance Criteria:**
-- `import minicv` succeeds after a standard install or `sys.path` addition.
-- Each submodule (`minicv.io`, `minicv.filtering`, etc.) is independently importable.
+- `import shawwaf` succeeds after a standard install or `sys.path` addition.
+- Each submodule (`shawwaf.io`, `shawwaf.filtering`, etc.) is independently importable.
 - No circular imports exist between modules.
 
 ---
@@ -413,7 +413,7 @@ minicv-repo/
 > As a reviewer, I want the project hosted on a public GitHub repository with a clean commit history, so that I can evaluate the development process.
 
 **Acceptance Criteria:**
-- Repository is public and contains the full `minicv` package.
+- Repository is public and contains the full `shawwaf` package.
 - `README.md` provides installation instructions and a quickstart example.
 
 ---

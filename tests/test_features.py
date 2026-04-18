@@ -1,9 +1,9 @@
-"""Unit tests for minicv.features — Feature extractors."""
+"""Unit tests for shawwaf.features — Feature extractors."""
 
 import numpy as np
 import pytest
 
-from minicv.features import (
+from shawwaf.features import (
     color_histogram_descriptor,
     pixel_statistics_descriptor,
     hog_descriptor,

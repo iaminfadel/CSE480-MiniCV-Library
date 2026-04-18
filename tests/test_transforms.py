@@ -1,9 +1,9 @@
-"""Unit tests for minicv.transforms — Resize, rotate, translate."""
+"""Unit tests for shawwaf.transforms — Resize, rotate, translate."""
 
 import numpy as np
 import pytest
 
-from minicv.transforms import resize, rotate, translate
+from shawwaf.transforms import resize, rotate, translate
 
 
 # ---------------------------------------------------------------------------

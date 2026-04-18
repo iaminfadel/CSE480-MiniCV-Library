@@ -1,5 +1,5 @@
 """
-Shared utilities for the MiniCV library.
+Shared utilities for the shawwaf library.
 
 Provides normalization, clipping, padding, and validation helpers
 used by all other modules. All shared logic is centralized here to

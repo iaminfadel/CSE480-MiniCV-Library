@@ -1,5 +1,5 @@
 """
-Feature extractors for the MiniCV library.
+Feature extractors for the shawwaf library.
 
 Provides two global image descriptors (color histogram, pixel statistics)
 and two gradient-based descriptors (HOG, edge orientation histogram).
@@ -9,9 +9,9 @@ classification or similarity tasks.
 
 import numpy as np
 
-from minicv.utils import validate_image, validate_grayscale
-from minicv.processing import sobel, histogram as _compute_histogram
-from minicv.io import to_grayscale
+from shawwaf.utils import validate_image, validate_grayscale
+from shawwaf.processing import sobel, histogram as _compute_histogram
+from shawwaf.io import to_grayscale
 
 
 # ---------------------------------------------------------------------------

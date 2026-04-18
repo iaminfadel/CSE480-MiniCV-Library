@@ -1,5 +1,5 @@
 """
-Image I/O and color conversion for the MiniCV library.
+Image I/O and color conversion for the shawwaf library.
 
 Provides functions to read/write images from/to disk and convert
 between RGB and grayscale color spaces. Uses Matplotlib backends for
@@ -11,7 +11,7 @@ import numpy as np
 import matplotlib.image as mpimg
 import matplotlib.pyplot as plt
 
-from minicv.utils import validate_image
+from shawwaf.utils import validate_image
 
 
 # Supported file extensions
